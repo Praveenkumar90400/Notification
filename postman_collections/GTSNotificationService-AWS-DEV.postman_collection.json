@@ -1,0 +1,3139 @@
+{
+	"info": {
+		"_postman_id": "21181406-120e-4ddc-b40e-8ccf3be772a7",
+		"name": "GTSNotificationService-AWS_DEV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "NotificationEventService",
+			"item": [
+				{
+					"name": "Create notification event",
+					"item": [
+						{
+							"name": "create notification event",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"gts_notification_event_name\":\"JOB_POST3\",\r\n   \"gts_notification_event_description\": \"A new job is created\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification name cannot be empty",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"gts_notification_event_name\": \" \",\r\n   \"gts_notification_event_description\": \"A new job is created\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification name already exists",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"gts_notification_event_name\":\"JOB_POST\",\r\n   \"gts_notification_event_description\": \"A new job is created\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update notification event",
+					"item": [
+						{
+							"name": "Update notification event",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":1,\r\n   \"gts_notification_event_name\":\"JOB_POST3\",\r\n   \"gts_notification_event_description\": \"New Job\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event id is invalid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":-1,\r\n   \"gts_notification_event_name\":\"JOB_POST\",\r\n   \"gts_notification_event_description\": \"A new job is updated\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification name cannot be empty",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":1,\r\n   \"gts_notification_event_name\":\" \",\r\n   \"gts_notification_event_description\": \"A new job is updated\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification evrnt id does not exist",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":11,\r\n   \"gts_notification_event_name\":\"JOB_POST\",\r\n   \"gts_notification_event_description\": \"A new job is updated\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification name does not exists",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":1,\r\n   \"gts_notification_event_name\":\"JOB_POS\",\r\n   \"gts_notification_event_description\": \"A new job is updated\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event id deactivated",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":2,\r\n   \"gts_notification_event_name\":\"JOB_POST1\",\r\n   \"gts_notification_event_description\": \"A new job is updated\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Deactivate notification event",
+					"item": [
+						{
+							"name": "Deactivate notification event",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"gts_notification_event_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events/deactivate",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification id is invalid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"gts_notification_event_id\":-1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events/deactivate",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification id not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"gts_notification_event_id\":11\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events/deactivate",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Activate notification event",
+					"item": [
+						{
+							"name": "Activate notification event",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"gts_notification_event_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events/activate",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification id is invalid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"gts_notification_event_id\":-1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events/activate",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification id not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"gts_notification_event_id\":11\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events/activate",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get all notification events",
+					"item": [
+						{
+							"name": "Get all notification events",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get notification event by id",
+					"item": [
+						{
+							"name": "Get notification event by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events/notification_event_id/1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"notification_event_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Invalid notification event id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events//notification_event_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"",
+										"notification_event_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event id not found",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events//notification_event_id/11",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"",
+										"notification_event_id",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get notification event by name",
+					"item": [
+						{
+							"name": "Get notification event name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events/notification_event_name/j",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"notification_event_name",
+										"j"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event name not found",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events//notification_event_name/uhg",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"",
+										"notification_event_name",
+										"uhg"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete notification event by id",
+					"item": [
+						{
+							"name": "Delete notification event by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events/notification_event_id/1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"notification_event_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Invalid notification event id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events//notification_event_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"",
+										"notification_event_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event id not found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notification/events//notification_event_id/11",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notification",
+										"events",
+										"",
+										"notification_event_id",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "NotificationService",
+			"item": [
+				{
+					"name": "Generate Notification",
+					"item": [
+						{
+							"name": "Generate notification",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":1,\r\n    \"gts_notification_message\":\"JOB POST\",\r\n    \"gts_notification_receiver_role_id\":1,\r\n    \"gts_notification_receiver_user_id\":1,\r\n    \"gts_notification_timezone_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event id is invalid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":-1,\r\n    \"gts_notification_message\":\"JOB POST\",\r\n    \"gts_notification_receiver_role_id\":1,\r\n    \"gts_notification_receiver_user_id\":1,\r\n    \"gts_notification_timezone_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event message cannot be empty",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":1,\r\n    \"gts_notification_message\":\" \",\r\n    \"gts_notification_receiver_role_id\":1,\r\n    \"gts_notification_receiver_user_id\":1,\r\n    \"gts_notification_timezone_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Receiver role id is invalid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":1,\r\n    \"gts_notification_message\":\"JOB POST\",\r\n    \"gts_notification_receiver_role_id\":-1,\r\n    \"gts_notification_receiver_user_id\":1,\r\n    \"gts_notification_timezone_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Receiver user id is invalid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":1,\r\n    \"gts_notification_message\":\"JOB POST\",\r\n    \"gts_notification_receiver_role_id\":1,\r\n    \"gts_notification_receiver_user_id\":-1,\r\n    \"gts_notification_timezone_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification timezone id is invalid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":1,\r\n    \"gts_notification_message\":\"JOB POST\",\r\n    \"gts_notification_receiver_role_id\":1,\r\n    \"gts_notification_receiver_user_id\":1,\r\n    \"gts_notification_timezone_id\":-1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event id doesnot exists",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":11,\r\n    \"gts_notification_message\":\"JOB POST\",\r\n    \"gts_notification_receiver_role_id\":1,\r\n    \"gts_notification_receiver_user_id\":1,\r\n    \"gts_notification_timezone_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Time zone id doesnot exists",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_event_id\":1,\r\n    \"gts_notification_message\":\"JOB POST\",\r\n    \"gts_notification_receiver_role_id\":1,\r\n    \"gts_notification_receiver_user_id\":1,\r\n    \"gts_notification_timezone_id\":11\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get notification by notification id",
+					"item": [
+						{
+							"name": "Get notification by notification id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/notification_id/1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"notification_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification id is invalid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/notification_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"notification_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification id does not exist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/notification_id/111",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"notification_id",
+										"111"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete notification by id",
+					"item": [
+						{
+							"name": "Delete notification by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/notification_id/1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"notification_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification id is invalid",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/notification_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"notification_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification id not found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/notification_id/11",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"notification_id",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete notification by event id",
+					"item": [
+						{
+							"name": "Delete by event id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/notification_event_id/1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"notification_event_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Event id is invalid",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/notification_event_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"notification_event_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Event id not found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/notification_event_id/11",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"notification_event_id",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "NotificationEventSubscribers",
+			"item": [
+				{
+					"name": "Add notification event subscriber",
+					"item": [
+						{
+							"name": "Add notification event subscriber",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_user_id\":1,\r\n   \"gts_notification_event_id\":\"1\"\r\n  } \r\n  \r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event id is invalid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_user_id\":1,\r\n   \"gts_notification_event_id\":\"-1,2\"\r\n  } ,\r\n  {\r\n   \"gts_user_id\":2,\r\n   \"gts_notification_event_id\":\"4,3\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification user id is invalid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_user_id\":-1,\r\n   \"gts_notification_event_id\":\"1,2\"\r\n  } ,\r\n  {\r\n   \"gts_user_id\":2,\r\n   \"gts_notification_event_id\":\"4,3\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User id not found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_user_id\":11,\r\n   \"gts_notification_event_id\":\"1,2\"\r\n  } ,\r\n  {\r\n   \"gts_user_id\":2,\r\n   \"gts_notification_event_id\":\"4,3\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event id not found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_user_id\":1,\r\n   \"gts_notification_event_id\":\"11,2\"\r\n  } ,\r\n  {\r\n   \"gts_user_id\":2,\r\n   \"gts_notification_event_id\":\"4,3\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get notification event subscriber by user id",
+					"item": [
+						{
+							"name": "Get notification event subscriber by user id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber/user_id/1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber",
+										"user_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User id is invalid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber/user_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber",
+										"user_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User id does not exist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber/user_id/17",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber",
+										"user_id",
+										"17"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete notification event subscriber  by id",
+					"item": [
+						{
+							"name": "Delete notification event subscriberby id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber/notification_event_subscriber_id/1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber",
+										"notification_event_subscriber_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event subscriber  id is invalid",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber/notification_event_subscriber_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber",
+										"notification_event_subscriber_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event subscriber  id not found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber/notification_event_subscriber_id/11",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber",
+										"notification_event_subscriber_id",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete notification by user id",
+					"item": [
+						{
+							"name": "Delete by user id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber/user_id/2",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber",
+										"user_id",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user id is invalid",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber/user_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber",
+										"user_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User id not found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/event/subscriber/user_id/22",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"event",
+										"subscriber",
+										"user_id",
+										"22"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "NotificationEventSubscribersByRoles",
+			"item": [
+				{
+					"name": "Add notification event subscriber by roles",
+					"item": [
+						{
+							"name": "Add notification event subscriber by roles",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_notification_role_id\":2,\r\n   \"gts_notification_event_id\":\"1\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event id is invalid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_notification_role_id\":1,\r\n   \"gts_notification_event_id\":\"-1,2\"\r\n  } ,\r\n  {\r\n   \"gts_notification_role_id\":2,\r\n   \"gts_notification_event_id\":\"4,3\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification role id is invalid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_notification_role_id\":-1,\r\n   \"gts_notification_event_id\":\"1,2\"\r\n  } ,\r\n  {\r\n   \"gts_notification_role_id\":2,\r\n   \"gts_notification_event_id\":\"4,3\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Role id not found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_notification_role_id\":11,\r\n   \"gts_notification_event_id\":\"1,2\"\r\n  } ,\r\n  {\r\n   \"gts_notification_role_id\":2,\r\n   \"gts_notification_event_id\":\"4,3\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event id not found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_notification_role_id\":1,\r\n   \"gts_notification_event_id\":\"11,2\"\r\n  } ,\r\n  {\r\n   \"gts_notification_role_id\":2,\r\n   \"gts_notification_event_id\":\"4,3\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get notification event subscriber by role id",
+					"item": [
+						{
+							"name": "Get notification event subscriber by role id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role/notification_role_id/2",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role",
+										"notification_role_id",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Role id is invalid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role/notification_role_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role",
+										"notification_role_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Role id does not exist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role/notification_role_id/17",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role",
+										"notification_role_id",
+										"17"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete notification event subscriber by role by id",
+					"item": [
+						{
+							"name": "Delete notification event subscriber by rolesby id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role/notification_event_subscriber_by_role_id/1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role",
+										"notification_event_subscriber_by_role_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event subscriber  by role id is invalid",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role/notification_event_subscriber_by_role_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role",
+										"notification_event_subscriber_by_role_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event subscriber by role  id not found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role/notification_event_subscriber_by_role_id/11",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role",
+										"notification_event_subscriber_by_role_id",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete notification by role id",
+					"item": [
+						{
+							"name": "Delete by role id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role/notification_role_id/2",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role",
+										"notification_role_id",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Role id is invalid",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role/notification_role_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role",
+										"notification_role_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Role id not found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/role/notification_role_id/11",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"role",
+										"notification_role_id",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "NotificationSubscriberGroups",
+			"item": [
+				{
+					"name": "Create notification subscriber group",
+					"item": [
+						{
+							"name": "create notification subscriber group",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"gts_notification_subscriber_group_name\":\"JOB_POST3\",\r\n   \"gts_notification_subscriber_group_description\": \"A new job is created\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification name cannot be empty",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"gts_notification_subscriber_group_name\":\" \",\r\n   \"gts_notification_subscriber_group_description\": \"A new job is created\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification name already exists",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"gts_notification_subscriber_group_name\":\"JOB_POST\",\r\n   \"gts_notification_subscriber_group_description\": \"A new job is created\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update notification subscriber group",
+					"item": [
+						{
+							"name": "Update notification subscriber group",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_subscriber_group_id\":1,\r\n   \"gts_notification_subscriber_group_name\":\"JOB_POST3\",\r\n   \"gts_notification_subscriber_group_description\": \"New Job\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification group id is invalid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_subscriber_group_id\":-1,\r\n   \"gts_notification_subscriber_group_name\":\"JOB_POST\",\r\n   \"gts_notification_subscriber_group_description\": \"A new job is updated\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification name cannot be empty",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_subscriber_group_id\":1,\r\n   \"gts_notification_subscriber_group_name\":\" \",\r\n   \"gts_notification_subscriber_group_description\": \"A new job is updated\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification group id does not exist",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_subscriber_group_id\":11,\r\n   \"gts_notification_subscriber_group_name\":\"JOB_POST\",\r\n   \"gts_notification_subscriber_group_description\": \"A new job is updated\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification name does not exists",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_subscriber_group_id\":1,\r\n   \"gts_notification_subscriber_group_name\":\"JOB_POT\",\r\n   \"gts_notification_subscriber_group_description\": \"A new job is updated\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification event id deactivated",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_subscriber_group_id\":2,\r\n   \"gts_notification_subscriber_group_name\":\"JOB_POST\",\r\n   \"gts_notification_subscriber_group_description\": \"A new job is updated\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Deactivate notification group",
+					"item": [
+						{
+							"name": "Deactivate notification subscriber group",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \"gts_notification_subscriber_group_id\":1\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/deactivate",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification group  id is invalid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_subscriber_group_id\":-2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/deactivate",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification group id not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_subscriber_group_id\":12\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/deactivate",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Activate notification group",
+					"item": [
+						{
+							"name": "Activate notification group",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_subscriber_group_id\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/activate",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification id is invalid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_subscriber_group_id\":-2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/activate",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification id not found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"gts_notification_subscriber_group_id\":12\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/activate",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get all notification subscriber groups",
+					"item": [
+						{
+							"name": "Get all notification subscriber groups",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get notification group by id",
+					"item": [
+						{
+							"name": "Get notification group by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/notification_subscriber_group_id/1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"notification_subscriber_group_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Invalid notification group id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/notification_subscriber_group_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"notification_subscriber_group_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification group id not found",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/notification_subscriber_group_id/11",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"notification_subscriber_group_id",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get notification group by name",
+					"item": [
+						{
+							"name": "Get notification group name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/notification_subscriber_group_name/j",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"notification_subscriber_group_name",
+										"j"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification group name not found",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/notification_subscriber_group_name/jtyy",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"notification_subscriber_group_name",
+										"jtyy"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete notification group by id",
+					"item": [
+						{
+							"name": "Delete notification group by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/notification_subscriber_group_id/1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"notification_subscriber_group_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Invalid notification group id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/notification_subscriber_group_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"notification_subscriber_group_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification group id not found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/subscriber/group/notification_subscriber_group_id/11",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"subscriber",
+										"group",
+										"notification_subscriber_group_id",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "NotificationGroupSubscribers",
+			"item": [
+				{
+					"name": "Add notification group subscriber",
+					"item": [
+						{
+							"name": "Add notification group subscriber",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_user_id\":1,\r\n   \"gts_notification_group_id\":\"1\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification group id is invalid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_user_id\":1,\r\n   \"gts_notification_group_id\":\"-1,2\"\r\n  } ,\r\n  {\r\n   \"gts_user_id\":2,\r\n   \"gts_notification_group_id\":\"4,3\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification user id is invalid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_user_id\":-1,\r\n   \"gts_notification_group_id\":\"1,2\"\r\n  } ,\r\n  {\r\n   \"gts_user_id\":2,\r\n   \"gts_notification_group_id\":\"4,3\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User id not found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_user_id\":11,\r\n   \"gts_notification_group_id\":\"1,2\"\r\n  } ,\r\n  {\r\n   \"gts_user_id\":2,\r\n   \"gts_notification_group_id\":\"4,3\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification group id not found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n   \"gts_user_id\":1,\r\n   \"gts_notification_group_id\":\"11,2\"\r\n  } ,\r\n  {\r\n   \"gts_user_id\":2,\r\n   \"gts_notification_group_id\":\"4,3\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get notification group subscriber by user id",
+					"item": [
+						{
+							"name": "Get notification group subscriber by user id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber/user_id/1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber",
+										"user_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User id is invalid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber/user_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber",
+										"user_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User id does not exist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber/user_id/11",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber",
+										"user_id",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete notification group subscriber  by id",
+					"item": [
+						{
+							"name": "Delete notification group subscriberby id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber/notification_group_subscriber_id/1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber",
+										"notification_group_subscriber_id",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification group subscriber  id is invalid",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber/notification_group_subscriber_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber",
+										"notification_group_subscriber_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Notification group subscriber  id not found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber/notification_group_subscriber_id/11",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber",
+										"notification_group_subscriber_id",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete notification by user id",
+					"item": [
+						{
+							"name": "Delete by user id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber/user_id/2",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber",
+										"user_id",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user id is invalid",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber/user_id/-1",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber",
+										"user_id",
+										"-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User id not found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{AWS_DEV_URL}}/api/v1/notifications/group/subscriber/user_id/22",
+									"host": [
+										"{{AWS_DEV_URL}}"
+									],
+								
+									"path": [
+										"api",
+										"v1",
+										"notifications",
+										"group",
+										"subscriber",
+										"user_id",
+										"22"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ7XCJ1c2VyX2lkXCI6MixcInByaW1hcnlfcm9sZVwiOlwiU0VSVklDRV9QUk9WSURFUlwiLFwib3RoZXJfcm9sZXNcIjpcIlwiLFwicGVybWlzc2lvbnNcIjpcIlwifSIsImV4cCI6MTYyMjA1MTQ3MCwiaWF0IjoxNjIyMDE1NDcwfQ.UjA_tmd8exR00zgTw8dYYZOiCmNPw3epv7BrcrEZ1c8",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Auth_Token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+"variable": [
+		{
+			"key": "AWS_DEV_URL",
+			"value": "https://6kmxdtde21.execute-api.ap-south-1.amazonaws.com/dev"
+		}
+	]
+}
